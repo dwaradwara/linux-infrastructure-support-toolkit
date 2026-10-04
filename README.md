@@ -4,6 +4,31 @@ Hands-on Linux L2 infrastructure support portfolio demonstrating structured trou
 
 All incidents were reproduced in isolated lab environments. No production systems or customer data were used.
 
+## Repository Scope
+
+This repository is a general Linux L2 support toolkit focused on cross-layer troubleshooting, structured case handling, diagnostic evidence, RCA, customer communication, and escalation readiness.
+
+The separate `ubuntu-kvm-support-lab` goes deeper into Ubuntu-specific and virtualization-focused support scenarios. This repository is intentionally broader and demonstrates a repeatable support workflow across services, networking, containers, virtualization, resource controls, and filesystems.
+
+## Lab Environment
+
+| Component | Environment |
+|---|---|
+| Control host | Ubuntu 26.04 LTS on WSL2 |
+| Control-host kernel | 6.18.33.2-microsoft-standard-WSL2 |
+| Primary workload VM | Ubuntu 22.04.5 LTS |
+| VM kernel | 5.15.0-194-generic |
+| VM resources | 2 vCPU, 2 GiB RAM |
+| Service manager | systemd 249 |
+| cgroup mode | cgroup v2 |
+| Container runtime | Docker 29.1.3 |
+| Virtualization | KVM/QEMU with libvirt |
+| libvirt | 12.0.0 |
+| QEMU | 10.2.1 |
+| CI validation | GitHub Actions running ShellCheck against `scripts/*.sh` |
+
+Primary workload VM: `devops-app-01`
+
 ## Support Workflow
 
 Customer report → assess impact/severity → reproduce → collect evidence → isolate failing layer → identify root cause → controlled remediation → validate recovery → customer response → KB/escalation package.
