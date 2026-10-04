@@ -1,4 +1,14 @@
 # Customer Ticket
+## Support Classification
+
+- Severity: P2 (lab classification)
+- Impact: Customer workflow unable to reach backend by hostname
+- Urgency: High
+- SLA: Simulated support scenario; no production SLA applies
+
+### Severity Rationale
+
+The hostname-based workflow was unavailable, but the backend service itself remained operational and reachable directly by IP. The issue was therefore significant but not a platform-wide outage.
 
 ## Subject
 

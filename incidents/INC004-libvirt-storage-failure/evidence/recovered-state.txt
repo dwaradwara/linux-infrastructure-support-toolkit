@@ -1,0 +1,12 @@
+=== VM STATE ===
+running
+
+
+=== BLOCK DEVICES ===
+ Target   Source
+--------------------------------------------------------------------
+ vda      /var/lib/libvirt/images/lab-pool/support-vm-inc004.qcow2
+
+
+=== RESTORED DISK ===
+-rw-r--r--+ 1 libvirt-qemu kvm 193K Oct  4 14:25 /var/lib/libvirt/images/lab-pool/support-vm-inc004.qcow2

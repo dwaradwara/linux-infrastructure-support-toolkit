@@ -1,4 +1,14 @@
 # Customer Ticket
+## Support Classification
+
+- Severity: P2 (lab classification)
+- Impact: Containerized customer service unreachable through published endpoint
+- Urgency: High
+- SLA: Simulated support scenario; no production SLA applies
+
+### Severity Rationale
+
+The customer-facing endpoint was unavailable, but the impact was isolated to one containerized service and there was no evidence of broader infrastructure failure.
 
 ## Subject
 

@@ -2,3 +2,4 @@ support-bundle-*/
 support-bundle-*.tar.gz
 *.log
 .env
+support-bundle-*.tar.gz.sha256
