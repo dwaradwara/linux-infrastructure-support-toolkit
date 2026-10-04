@@ -130,13 +130,13 @@ Generated archives receive a SHA-256 checksum.
 
 ## Security Controls
 
-The collector intentionally does not collect:
+The diagnostic collector uses a fixed set of predefined commands and does not intentionally collect:
 
 - private SSH keys
-- /etc/shadow
+- `/etc/shadow`
 - environment-variable dumps
-- API tokens
-- passwords
+
+Because process command lines and system/application logs may contain sensitive information, generated support bundles should be reviewed and redacted before being shared externally.
 
 ## Support Case Documentation
 

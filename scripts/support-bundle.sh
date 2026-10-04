@@ -16,13 +16,14 @@ Linux Infrastructure Support Bundle
 Version: $VERSION
 Hostname: $HOSTNAME_VALUE
 Generated UTC: $(date -u '+%Y-%m-%d %H:%M:%S')
-Collector: allowlisted diagnostics only
+Collector: fixed diagnostic command set
 
 Security:
-- does not collect private SSH keys
+- does not intentionally collect private SSH keys
 - does not collect /etc/shadow
 - does not collect environment-variable dumps
-- does not collect API tokens or passwords
+- uses a fixed set of diagnostic commands
+- review and redact the bundle before external sharing because logs or process information may contain sensitive data
 META
 
 run_check() {
