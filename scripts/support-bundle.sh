@@ -2,7 +2,7 @@
 
 set -u
 
-VERSION="1.1.0"
+VERSION="1.2.0"
 TIMESTAMP="$(date -u +%Y%m%d-%H%M%S)"
 HOSTNAME_VALUE="$(hostname)"
 OUTPUT_DIR="support-bundle-${HOSTNAME_VALUE}-${TIMESTAMP}"
@@ -52,6 +52,13 @@ run_check system-info uname -a
 run_check os-release cat /etc/os-release
 run_check uptime uptime
 run_check memory free -m
+run_check vmstat vmstat 1 5
+run_check top-memory-processes ps aux --sort=-%mem
+run_check top-cpu-processes ps aux --sort=-%cpu
+run_check kernel-events journalctl -k -n 150 --no-pager
+run_check memory-pressure cat /proc/pressure/memory
+run_check cpu-pressure cat /proc/pressure/cpu
+run_check io-pressure cat /proc/pressure/io
 run_check disk-usage df -h
 run_check inode-usage df -i
 run_check block-devices lsblk

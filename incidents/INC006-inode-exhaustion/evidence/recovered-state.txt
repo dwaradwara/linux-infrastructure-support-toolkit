@@ -1,0 +1,13 @@
+=== BLOCK USAGE ===
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/loop5       92M   48K   86M   1% /mnt/inc006
+
+=== INODE USAGE ===
+Filesystem     Inodes IUsed IFree IUse% Mounted on
+/dev/loop5        512    13   499    3% /mnt/inc006
+
+=== CUSTOMER WRITE TEST ===
+customer write restored
+
+=== FILE COUNT ===
+1

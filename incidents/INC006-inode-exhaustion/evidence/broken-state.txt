@@ -1,0 +1,25 @@
+=== WRITE FAILURE ===
+touch: cannot touch '/mnt/inc006/cache/cache-501.tmp': No space left on device
+
+=== BLOCK USAGE ===
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/loop5       92M   44K   86M   1% /mnt/inc006
+
+=== INODE USAGE ===
+Filesystem     Inodes IUsed IFree IUse% Mounted on
+/dev/loop5        512   512     0  100% /mnt/inc006
+
+=== MOUNT ===
+TARGET      SOURCE     FSTYPE OPTIONS
+/mnt/inc006 /dev/loop5 ext4   rw,relatime
+
+=== FILE COUNT ===
+500
+
+=== INODE CONSUMPTION ===
+503	/mnt/inc006
+501	/mnt/inc006/cache
+1	/mnt/inc006/lost+found
+
+=== DATA SIZE ===
+20K	/mnt/inc006/cache

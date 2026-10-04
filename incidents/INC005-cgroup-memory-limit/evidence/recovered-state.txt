@@ -1,0 +1,15 @@
+● support-memory-demo.service - Controlled cgroup Memory Limit Support Incident
+     Loaded: loaded (/etc/systemd/system/support-memory-demo.service; disabled; vendor preset: enabled)
+     Active: active (running) since Sun 2026-10-04 10:38:06 UTC; 2min 43s ago
+   Main PID: 3678 (python3)
+      Tasks: 1 (limit: 2307)
+     Memory: 203.8M (max: 300.0M available: 96.1M)
+        CPU: 385ms
+     CGroup: /system.slice/support-memory-demo.service
+             └─3678 python3 /usr/local/bin/support-memory-demo.py
+Result=success
+MemoryCurrent=213749760
+MemoryMax=314572800
+               total        used        free      shared  buff/cache   available
+Mem:            1963         500         178           1        1284        1301
+Swap:              0           0           0

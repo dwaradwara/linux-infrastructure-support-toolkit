@@ -1,0 +1,59 @@
+Oct 04 10:36:58 devops-app-01 systemd[1]: Started Controlled cgroup Memory Limit Support Incident.
+Oct 04 10:36:58 devops-app-01 support-memory-demo.py[3244]: memory-demo: starting controlled allocation
+Oct 04 10:36:58 devops-app-01 support-memory-demo.py[3244]: memory-demo: allocated approximately 5 MB
+Oct 04 10:36:58 devops-app-01 support-memory-demo.py[3244]: memory-demo: allocated approximately 10 MB
+Oct 04 10:36:59 devops-app-01 support-memory-demo.py[3244]: memory-demo: allocated approximately 15 MB
+Oct 04 10:36:59 devops-app-01 support-memory-demo.py[3244]: memory-demo: allocated approximately 20 MB
+Oct 04 10:36:59 devops-app-01 support-memory-demo.py[3244]: memory-demo: allocated approximately 25 MB
+Oct 04 10:37:00 devops-app-01 support-memory-demo.py[3244]: memory-demo: allocated approximately 30 MB
+Oct 04 10:37:00 devops-app-01 support-memory-demo.py[3244]: memory-demo: allocated approximately 35 MB
+Oct 04 10:37:01 devops-app-01 support-memory-demo.py[3244]: memory-demo: allocated approximately 40 MB
+Oct 04 10:37:01 devops-app-01 support-memory-demo.py[3244]: memory-demo: allocated approximately 45 MB
+Oct 04 10:37:01 devops-app-01 support-memory-demo.py[3244]: memory-demo: allocated approximately 50 MB
+Oct 04 10:37:02 devops-app-01 support-memory-demo.py[3244]: memory-demo: allocated approximately 55 MB
+Oct 04 10:37:02 devops-app-01 systemd[1]: support-memory-demo.service: A process of this unit has been killed by the OOM killer.
+Oct 04 10:37:02 devops-app-01 systemd[1]: support-memory-demo.service: Main process exited, code=killed, status=9/KILL
+Oct 04 10:37:02 devops-app-01 systemd[1]: support-memory-demo.service: Failed with result 'oom-kill'.
+Oct 04 10:38:06 devops-app-01 systemd[1]: Started Controlled cgroup Memory Limit Support Incident.
+Oct 04 10:38:06 devops-app-01 support-memory-demo.py[3678]: memory-demo: starting controlled allocation
+Oct 04 10:38:06 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 5 MB
+Oct 04 10:38:07 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 10 MB
+Oct 04 10:38:07 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 15 MB
+Oct 04 10:38:08 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 20 MB
+Oct 04 10:38:08 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 25 MB
+Oct 04 10:38:08 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 30 MB
+Oct 04 10:38:09 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 35 MB
+Oct 04 10:38:09 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 40 MB
+Oct 04 10:38:10 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 45 MB
+Oct 04 10:38:10 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 50 MB
+Oct 04 10:38:10 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 55 MB
+Oct 04 10:38:11 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 60 MB
+Oct 04 10:38:11 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 65 MB
+Oct 04 10:38:12 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 70 MB
+Oct 04 10:38:12 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 75 MB
+Oct 04 10:38:13 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 80 MB
+Oct 04 10:38:13 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 85 MB
+Oct 04 10:38:13 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 90 MB
+Oct 04 10:38:14 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 95 MB
+Oct 04 10:38:14 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 100 MB
+Oct 04 10:38:15 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 105 MB
+Oct 04 10:38:15 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 110 MB
+Oct 04 10:38:15 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 115 MB
+Oct 04 10:38:16 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 120 MB
+Oct 04 10:38:16 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 125 MB
+Oct 04 10:38:17 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 130 MB
+Oct 04 10:38:17 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 135 MB
+Oct 04 10:38:17 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 140 MB
+Oct 04 10:38:18 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 145 MB
+Oct 04 10:38:18 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 150 MB
+Oct 04 10:38:19 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 155 MB
+Oct 04 10:38:19 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 160 MB
+Oct 04 10:38:20 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 165 MB
+Oct 04 10:38:20 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 170 MB
+Oct 04 10:38:20 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 175 MB
+Oct 04 10:38:21 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 180 MB
+Oct 04 10:38:21 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 185 MB
+Oct 04 10:38:22 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 190 MB
+Oct 04 10:38:22 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 195 MB
+Oct 04 10:38:22 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocated approximately 200 MB
+Oct 04 10:38:23 devops-app-01 support-memory-demo.py[3678]: memory-demo: allocation complete; remaining alive
