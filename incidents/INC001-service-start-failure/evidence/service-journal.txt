@@ -1,0 +1,24 @@
+Oct 04 09:54:23 devops-app-01 systemd[1]: Started Virtuozzo Support Toolkit Demo Service.
+Oct 04 09:54:23 devops-app-01 python3[1488]: Traceback (most recent call last):
+Oct 04 09:54:23 devops-app-01 python3[1488]:   File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+Oct 04 09:54:23 devops-app-01 python3[1488]:     return _run_code(code, main_globals, None,
+Oct 04 09:54:23 devops-app-01 python3[1488]:   File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+Oct 04 09:54:23 devops-app-01 python3[1488]:     exec(code, run_globals)
+Oct 04 09:54:23 devops-app-01 python3[1488]:   File "/usr/lib/python3.10/http/server.py", line 1307, in <module>
+Oct 04 09:54:23 devops-app-01 python3[1488]:     test(
+Oct 04 09:54:23 devops-app-01 python3[1488]:   File "/usr/lib/python3.10/http/server.py", line 1258, in test
+Oct 04 09:54:23 devops-app-01 python3[1488]:     with ServerClass(addr, HandlerClass) as httpd:
+Oct 04 09:54:23 devops-app-01 python3[1488]:   File "/usr/lib/python3.10/socketserver.py", line 452, in __init__
+Oct 04 09:54:23 devops-app-01 python3[1488]:     self.server_bind()
+Oct 04 09:54:23 devops-app-01 python3[1488]:   File "/usr/lib/python3.10/http/server.py", line 1301, in server_bind
+Oct 04 09:54:23 devops-app-01 python3[1488]:     return super().server_bind()
+Oct 04 09:54:23 devops-app-01 python3[1488]:   File "/usr/lib/python3.10/http/server.py", line 137, in server_bind
+Oct 04 09:54:23 devops-app-01 python3[1488]:     socketserver.TCPServer.server_bind(self)
+Oct 04 09:54:23 devops-app-01 python3[1488]:   File "/usr/lib/python3.10/socketserver.py", line 466, in server_bind
+Oct 04 09:54:23 devops-app-01 python3[1488]:     self.socket.bind(self.server_address)
+Oct 04 09:54:23 devops-app-01 python3[1488]: OSError: [Errno 98] Address already in use
+Oct 04 09:54:23 devops-app-01 systemd[1]: support-demo.service: Main process exited, code=exited, status=1/FAILURE
+Oct 04 09:54:23 devops-app-01 systemd[1]: support-demo.service: Failed with result 'exit-code'.
+Oct 04 09:55:36 devops-app-01 systemd[1]: Started Virtuozzo Support Toolkit Demo Service.
+Oct 04 09:55:46 devops-app-01 python3[1985]: 127.0.0.1 - - [04/Oct/2026 09:55:46] "HEAD / HTTP/1.1" 200 -
+Oct 04 09:55:57 devops-app-01 python3[1985]: 127.0.0.1 - - [04/Oct/2026 09:55:57] "HEAD / HTTP/1.1" 200 -

@@ -1,0 +1,9 @@
+● support-demo.service - Virtuozzo Support Toolkit Demo Service
+     Loaded: loaded (/etc/systemd/system/support-demo.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sun 2026-10-04 09:55:36 UTC; 1min 32s ago
+   Main PID: 1985 (python3)
+      Tasks: 1 (limit: 2307)
+     Memory: 8.6M
+        CPU: 263ms
+     CGroup: /system.slice/support-demo.service
+             └─1985 /usr/bin/python3 -m http.server 18081 --bind 127.0.0.1
