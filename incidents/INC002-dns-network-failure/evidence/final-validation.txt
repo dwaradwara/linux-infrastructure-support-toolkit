@@ -1,0 +1,12 @@
+active
+LISTEN 0      5          127.0.0.1:18082      0.0.0.0:*    users:(("python3",pid=2352,fd=3))                                                                                                                                                                
+127.0.0.1       backend.internal
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.10.12
+Date: Sun, 04 Oct 2026 10:02:54 GMT
+Content-type: text/html; charset=utf-8
+Content-Length: 1102
+
+  0  1102    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
