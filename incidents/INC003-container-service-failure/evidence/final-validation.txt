@@ -1,0 +1,13 @@
+CONTAINER ID   IMAGE              COMMAND                  CREATED              STATUS              PORTS                       NAMES
+2296dacb9e4e   python:3.12-slim   "python -u -m http.s…"   About a minute ago   Up About a minute   127.0.0.1:18083->8000/tcp   support-container-demo
+8000/tcp -> 127.0.0.1:18083
+Command: ["python","-u","-m","http.server","8000","--bind","0.0.0.0"]
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.12.15
+Date: Sun, 04 Oct 2026 10:07:29 GMT
+Content-type: text/html; charset=utf-8
+Content-Length: 877
+
+  0   877    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
