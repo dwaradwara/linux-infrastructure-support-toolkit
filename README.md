@@ -44,6 +44,7 @@ Customer report → assess impact/severity → reproduce → collect evidence �
 | INC005 | cgroups / memory | MemoryMax caused memory-cgroup OOM termination | journalctl, kernel logs, systemctl show, free |
 | INC006 | ext4 filesystem | Inode exhaustion while disk blocks remained available | df -h, df -i, findmnt, du --inodes |
 | INC007 | LVM / filesystem capacity | Application logical volume exhausted while volume group still had free capacity | df, du, lsblk, findmnt, pvs, vgs, lvs, resize2fs |
+| INC008 | HAProxy / Nginx / TLS | Certificate SAN did not match the HTTPS service hostname | curl, openssl s_client, haproxy -c, nginx -t, ss, systemctl |
 
 ## INC001 — systemd Service Start Failure
 
@@ -125,6 +126,26 @@ After recovery:
 - an additional application write succeeded
 
 No application data was deleted during recovery.
+
+## INC008 - HAProxy TLS Certificate Identity Failure
+
+The HTTPS frontend failed strict hostname validation while the backend application, Nginx, and HAProxy remained healthy.
+
+During the incident:
+
+- backend application: healthy
+- Nginx: healthy
+- HAProxy: active
+- HAProxy configuration: valid
+- TCP 8443: listening
+- TLS handshake: successful
+- requested hostname: `inc008.local`
+- presented certificate SAN: `DNS:wrong-inc008.local`
+- strict client validation: failed with curl error 60
+
+The failure was isolated to certificate hostname identity rather than application availability, reverse-proxy availability, TCP reachability, or TLS negotiation.
+
+The known-good certificate containing `DNS:inc008.local` was restored. HAProxy configuration was validated before reload, and strict HTTPS validation then succeeded without disabling certificate verification.
 
 ## Linux Diagnostic Support Bundle
 

@@ -1,0 +1,27 @@
+=== INC008 RECOVERED STATE ===
+Tue Oct  6 15:52:56 UTC 2026
+
+=== SERVICE STATE ===
+active
+active
+active
+
+=== HAPROXY CONFIG ===
+Configuration file is valid
+
+=== CERTIFICATE ===
+subject=CN = inc008.local
+issuer=CN = inc008.local
+notBefore=Oct  6 15:47:36 2026 GMT
+notAfter=Nov  5 15:47:36 2026 GMT
+X509v3 Subject Alternative Name:
+    DNS:inc008.local
+
+=== BACKEND ===
+{"status":"ok","service":"inc008-app"}
+
+=== NGINX ===
+{"status":"ok","service":"inc008-app"}
+
+=== STRICT HTTPS ===
+{"status":"ok","service":"inc008-app"}
