@@ -1,0 +1,43 @@
+=== INC010 RECOVERED STATE ===
+Tue Oct  6 16:33:52 UTC 2026
+
+=== BACKUP CHECKSUM ===
+inc010-prod.dump: OK
+
+=== ROLES ===
+                              List of roles
+ Role name  |                         Attributes
+------------+------------------------------------------------------------
+ inc010_app |
+ postgres   | Superuser, Create role, Create DB, Replication, Bypass RLS
+
+
+=== TABLE OWNERSHIP ===
+                                     List of relations
+ Schema |  Name  | Type  |   Owner    | Persistence | Access method |  Size  | Description
+--------+--------+-------+------------+-------------+---------------+--------+-------------
+ public | orders | table | inc010_app | permanent   | heap          | 792 kB |
+(1 row)
+
+
+=== ROW COUNT ===
+ order_count
+-------------
+       10000
+(1 row)
+
+
+=== STATUS DISTRIBUTION ===
+   status   | orders
+------------+--------
+ COMPLETED  |   6000
+ PROCESSING |   3000
+ REFUNDED   |   1000
+(3 rows)
+
+
+=== BUSINESS TOTAL ===
+ order_count | total_amount
+-------------+--------------
+       10000 |   5039618.05
+(1 row)

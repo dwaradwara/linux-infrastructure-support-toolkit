@@ -1,0 +1,31 @@
+=== INC010 BUSINESS-STATE COMPARISON ===
+Tue Oct  6 16:35:18 UTC 2026
+
+=== SOURCE ===
+ order_count | total_amount
+-------------+--------------
+       10000 |   5039618.05
+(1 row)
+
+
+   status   | orders
+------------+--------
+ COMPLETED  |   6000
+ PROCESSING |   3000
+ REFUNDED   |   1000
+(3 rows)
+
+
+=== RESTORED ===
+ order_count | total_amount
+-------------+--------------
+       10000 |   5039618.05
+(1 row)
+
+
+   status   | orders
+------------+--------
+ COMPLETED  |   6000
+ PROCESSING |   3000
+ REFUNDED   |   1000
+(3 rows)

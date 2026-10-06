@@ -46,6 +46,7 @@ Customer report → assess impact/severity → reproduce → collect evidence �
 | INC007 | LVM / filesystem capacity | Application logical volume exhausted while volume group still had free capacity | df, du, lsblk, findmnt, pvs, vgs, lvs, resize2fs |
 | INC008 | HAProxy / Nginx / TLS | Certificate SAN did not match the HTTPS service hostname | curl, openssl s_client, haproxy -c, nginx -t, ss, systemctl |
 | INC009 | nftables / networking | Firewall rule blocked TCP/18089 while routing, ICMP, listener, and local application remained healthy | ip, ping, ss, curl, nft |
+| INC010 | PostgreSQL backup / recovery | Valid backup restore failed because required application role was missing; recovery validated with checksum, ownership, row counts, and business totals | pg_dump, pg_restore, psql, sha256sum, Docker |
 
 ## INC001 — systemd Service Start Failure
 
@@ -165,6 +166,34 @@ During the incident:
 The fault was isolated to an nftables rule explicitly dropping TCP traffic from the client to the application port.
 
 The specific blocking rule was removed without disabling the firewall or restarting the application. The original remote HTTP request then succeeded.
+
+## INC010 - PostgreSQL Backup and Recovery Validation
+
+A PostgreSQL custom-format backup passed SHA-256 integrity validation but failed when restored into a clean recovery environment.
+
+The first recovery attempt failed because the source application role `inc010_app` did not exist on the target server.
+
+`pg_restore --exit-on-error` returned exit code `1` while processing object ownership:
+
+`ALTER TABLE public.orders OWNER TO inc010_app;`
+
+The failed attempt also demonstrated that a restore can leave partial database state behind.
+
+Recovery was repeated from a clean target after recreating the required database role.
+
+Final validation confirmed:
+
+- backup checksum: valid
+- `pg_restore` exit code: 0
+- restored table owner: `inc010_app`
+- restored rows: 10,000
+- COMPLETED orders: 6,000
+- PROCESSING orders: 3,000
+- REFUNDED orders: 1,000
+- source total amount: 5,039,618.05
+- restored total amount: 5,039,618.05
+
+The incident demonstrates that successful backup creation alone does not prove recoverability. Recovery procedures must also validate dependencies, ownership, permissions, restore exit status, and recovered business data.
 
 ## Linux Diagnostic Support Bundle
 
