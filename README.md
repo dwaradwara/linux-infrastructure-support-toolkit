@@ -195,6 +195,36 @@ Final validation confirmed:
 
 The incident demonstrates that successful backup creation alone does not prove recoverability. Recovery procedures must also validate dependencies, ownership, permissions, restore exit status, and recovered business data.
 
+## Ansible Linux Baseline Automation
+
+The repository also includes an Ansible role for repeatable Linux baseline configuration on an Ubuntu KVM/libvirt VM.
+
+The automation manages:
+
+- operational packages with APT
+- users and groups
+- filesystem ownership and permissions
+- Chrony service state
+- a Linux health-check utility
+- an infrastructure baseline marker
+
+The first deployment completed with:
+
+```text
+ok=8 changed=6 unreachable=0 failed=0
+```
+
+A second execution with no desired-state changes completed with:
+
+```text
+ok=8 changed=0 unreachable=0 failed=0
+```
+
+This validates repeatable, idempotent configuration management with Ansible.
+
+Implementation and execution evidence are available under `ansible/`.
+
+
 ## Linux Diagnostic Support Bundle
 
 The repository includes `scripts/support-bundle.sh`, an allowlisted Linux diagnostic collector.

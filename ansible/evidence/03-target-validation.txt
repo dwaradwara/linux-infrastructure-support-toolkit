@@ -1,0 +1,59 @@
+=== ANSIBLE LINUX BASELINE VALIDATION ===
+Tue Oct  6 16:43:29 UTC 2026
+
+=== USER / GROUP ===
+uid=1000(devops) gid=1000(devops) groups=1000(devops),27(sudo),1001(operations),120(docker),1003(ops-support)
+ops-support:x:1003:devops
+
+=== SUPPORT DIRECTORY ===
+drwxrwxr-x 2 root ops-support 4096 Oct  6 16:42 /opt/linux-support
+
+=== HEALTH CHECK UTILITY ===
+-rwxr-xr-x 1 root root 365 Oct  6 16:42 /usr/local/bin/linux-health-check
+=== HOST ===
+devops-app-01
+
+=== UPTIME ===
+ 16:43:29 up  1:23,  4 users,  load average: 0.15, 0.08, 0.03
+
+=== FILESYSTEM ===
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1        15G  4.2G   11G  29% /
+
+=== MEMORY ===
+               total        used        free      shared  buff/cache   available
+Mem:           1.9Gi       415Mi       257Mi        62Mi       1.3Gi       1.3Gi
+Swap:             0B          0B          0B
+
+=== FAILED SERVICES ===
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+0 loaded units listed.
+
+=== LISTENING TCP PORTS ===
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*          
+LISTEN 0      5          127.0.0.1:18081      0.0.0.0:*          
+LISTEN 0      5          127.0.0.1:18082      0.0.0.0:*          
+LISTEN 0      5          127.0.0.1:18088      0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:8000       0.0.0.0:*          
+LISTEN 0      4096         0.0.0.0:10050      0.0.0.0:*          
+LISTEN 0      511        127.0.0.1:8088       0.0.0.0:*          
+LISTEN 0      4096         0.0.0.0:8443       0.0.0.0:*          
+LISTEN 0      511          0.0.0.0:80         0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:55433      0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:55432      0.0.0.0:*          
+LISTEN 0      128          0.0.0.0:22         0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:35267      0.0.0.0:*          
+LISTEN 0      4096            [::]:10050         [::]:*          
+LISTEN 0      128             [::]:22            [::]:*          
+
+=== BASELINE STATUS ===
+linux-baseline=ok
+
+=== CHRONY ===
+enabled
+active
+
+=== BASELINE MARKER ===
+Managed by Ansible.
+Role: linux_baseline

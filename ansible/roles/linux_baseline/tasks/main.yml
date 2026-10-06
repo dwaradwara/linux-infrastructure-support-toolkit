@@ -1,0 +1,55 @@
+---
+- name: Install baseline operational packages
+  ansible.builtin.apt:
+    name:
+      - curl
+      - jq
+      - rsync
+      - unzip
+      - chrony
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Create operations support group
+  ansible.builtin.group:
+    name: ops-support
+    state: present
+
+- name: Add devops user to operations support group
+  ansible.builtin.user:
+    name: devops
+    groups: ops-support
+    append: true
+
+- name: Create support directory
+  ansible.builtin.file:
+    path: /opt/linux-support
+    state: directory
+    owner: root
+    group: ops-support
+    mode: "0775"
+
+- name: Install Linux health-check utility
+  ansible.builtin.copy:
+    src: linux-health-check.sh
+    dest: /usr/local/bin/linux-health-check
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Ensure chrony is enabled and running
+  ansible.builtin.service:
+    name: chrony
+    state: started
+    enabled: true
+
+- name: Create baseline marker
+  ansible.builtin.copy:
+    content: |
+      Managed by Ansible.
+      Role: linux_baseline
+    dest: /etc/linux-infrastructure-baseline
+    owner: root
+    group: root
+    mode: "0644"

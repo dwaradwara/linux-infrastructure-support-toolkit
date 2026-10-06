@@ -1,0 +1,8 @@
+---
+- name: Apply Linux infrastructure baseline
+  hosts: linux_servers
+  become: true
+  gather_facts: true
+
+  roles:
+    - linux_baseline

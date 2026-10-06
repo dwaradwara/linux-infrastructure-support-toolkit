@@ -1,0 +1,30 @@
+
+PLAY [Apply Linux infrastructure baseline] *************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [devops-app-01]
+
+TASK [linux_baseline : Install baseline operational packages] ******************
+changed: [devops-app-01]
+
+TASK [linux_baseline : Create operations support group] ************************
+changed: [devops-app-01]
+
+TASK [linux_baseline : Add devops user to operations support group] ************
+changed: [devops-app-01]
+
+TASK [linux_baseline : Create support directory] *******************************
+changed: [devops-app-01]
+
+TASK [linux_baseline : Install Linux health-check utility] *********************
+changed: [devops-app-01]
+
+TASK [linux_baseline : Ensure chrony is enabled and running] *******************
+ok: [devops-app-01]
+
+TASK [linux_baseline : Create baseline marker] *********************************
+changed: [devops-app-01]
+
+PLAY RECAP *********************************************************************
+devops-app-01              : ok=8    changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
