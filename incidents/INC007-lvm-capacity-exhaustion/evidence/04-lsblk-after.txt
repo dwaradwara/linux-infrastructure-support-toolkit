@@ -1,0 +1,14 @@
+NAME                             SIZE TYPE FSTYPE      MOUNTPOINT
+loop0                             74M loop squashfs    /snap/core22/2437
+loop1                          115.2M loop squashfs    /snap/lxd/40911
+loop2                           50.1M loop squashfs    /snap/snapd/27710
+loop3                          115.3M loop squashfs    /snap/lxd/40575
+loop4                           44.7M loop squashfs    /snap/snapd/28254
+loop5                              2G loop
+└─loop5p1                          2G part LVM2_member
+  └─inc007--vg-inc007--app--lv   1.4G lvm  ext4        /mnt/inc007
+sr0                              366K rom  iso9660
+vda                               15G disk
+├─vda1                          14.9G part ext4        /
+├─vda14                            4M part
+└─vda15                          106M part vfat        /boot/efi

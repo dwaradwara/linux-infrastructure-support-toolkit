@@ -1,0 +1,26 @@
+=== INC007 RECOVERED STATE ===
+Tue Oct  6 15:34:18 UTC 2026
+
+Filesystem                              Size  Used Avail Use% Mounted on
+/dev/mapper/inc007--vg-inc007--app--lv  1.4G  643M  646M  50% /mnt/inc007
+
+Filesystem                             Inodes IUsed IFree IUse% Mounted on
+/dev/mapper/inc007--vg-inc007--app--lv  82192    16 82176    1% /mnt/inc007
+
+  PV           VG        Fmt  Attr PSize  PFree
+  /dev/loop5p1 inc007-vg lvm2 a--  <2.00g 644.00m
+
+  VG        #PV #LV #SN Attr   VSize  VFree
+  inc007-vg   1   1   0 wz--n- <2.00g 644.00m
+
+  LV            VG        Attr       LSize  Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  inc007-app-lv inc007-vg -wi-ao---- <1.37g
+
+TARGET      SOURCE                                 FSTYPE OPTIONS
+/mnt/inc007 /dev/mapper/inc007--vg-inc007--app--lv ext4   rw,relatime
+
+total 643M
+-rw-rw-r-- 1 devops devops 610M Oct  6 15:27 application.log
+-rw-rw-r-- 1 devops devops   24 Oct  6 15:27 health-check.txt
+-rw-rw-r-- 1 devops devops  32M Oct  6 15:29 new-write.bin
+-rw-rw-r-- 1 devops devops   27 Oct  6 15:29 post-recovery-write.txt

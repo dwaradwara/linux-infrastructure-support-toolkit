@@ -1,0 +1,33 @@
+INC007 - Degraded State
+
+Application filesystem:
+/dev/mapper/inc007--vg-inc007--app--lv
+
+Filesystem size: 672M
+Used: 623M
+Available: 0
+Usage: 100%
+
+Inodes:
+Total: 44832
+Used: 15
+Free: 44817
+Usage: 1%
+
+Volume group:
+inc007-vg
+VSize: <2.00g
+VFree: 1.31g
+
+Logical volume:
+inc007-app-lv
+Size: 700.00m
+
+Application data:
+application.log: 610M
+health-check.txt: 24 bytes
+new-write.bin: 13M partial file
+
+A requested 32 MiB application write could not complete because the ext4 filesystem had no remaining block capacity.
+
+The volume group still had 1.31 GiB free, proving the failure was caused by an undersized logical volume/filesystem rather than exhaustion of the underlying LVM volume group.

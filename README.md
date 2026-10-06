@@ -43,6 +43,7 @@ Customer report → assess impact/severity → reproduce → collect evidence �
 | INC004 | KVM / libvirt | qcow2 disk unavailable at configured path | virsh, domain XML, block-device inspection |
 | INC005 | cgroups / memory | MemoryMax caused memory-cgroup OOM termination | journalctl, kernel logs, systemctl show, free |
 | INC006 | ext4 filesystem | Inode exhaustion while disk blocks remained available | df -h, df -i, findmnt, du --inodes |
+| INC007 | LVM / filesystem capacity | Application logical volume exhausted while volume group still had free capacity | df, du, lsblk, findmnt, pvs, vgs, lvs, resize2fs |
 
 ## INC001 — systemd Service Start Failure
 
@@ -94,6 +95,36 @@ df -i revealed the actual failure:
 - 100% inode utilization
 
 After controlled cleanup, 499 inodes were free and the customer write operation succeeded again.
+
+## INC007 — LVM Filesystem Capacity Exhaustion
+
+An LVM-backed application filesystem reached 100% utilization and could no longer complete new writes.
+
+Investigation separated the storage layers using `df`, `df -i`, `du`, `findmnt`, `lsblk`, `pvs`, `vgs`, and `lvs`.
+
+At failure time:
+
+- filesystem size: 672 MiB
+- filesystem utilization: 100%
+- available filesystem capacity: 0
+- inode utilization: approximately 1%
+- logical volume size: 700 MiB
+- volume-group free capacity: approximately 1.31 GiB
+
+The underlying volume group still had substantial unused capacity, proving that the constrained layer was the application logical volume and filesystem.
+
+The logical volume was extended by 700 MiB and the ext4 filesystem was grown online with `resize2fs`.
+
+After recovery:
+
+- logical volume size: approximately 1.37 GiB
+- filesystem size: approximately 1.4 GiB
+- filesystem utilization: 50%
+- available capacity: 646 MiB
+- the previously failing 32 MiB write completed successfully
+- an additional application write succeeded
+
+No application data was deleted during recovery.
 
 ## Linux Diagnostic Support Bundle
 
@@ -155,7 +186,7 @@ The engineering escalation documents show what evidence would be supplied to eng
 
 ## Technical Areas Demonstrated
 
-Linux administration, systemd, journalctl, process troubleshooting, socket diagnostics, TCP/IP, DNS, Docker, KVM/QEMU, libvirt, virtual storage, Linux cgroups, OOM analysis, ext4 filesystems, inode exhaustion, Bash diagnostics, incident triage, root-cause analysis, customer communication, knowledge-base documentation, and L2-to-engineering escalation.
+Linux administration, systemd, journalctl, process troubleshooting, socket diagnostics, TCP/IP, DNS, Docker, KVM/QEMU, libvirt, virtual storage, Linux cgroups, OOM analysis, ext4 filesystems, inode exhaustion, LVM physical volumes, volume groups and logical volumes, online filesystem expansion, Bash diagnostics, incident triage, root-cause analysis, customer communication, knowledge-base documentation, and L2-to-engineering escalation.
 
 ## Portfolio Scope
 
