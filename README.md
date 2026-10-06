@@ -45,6 +45,7 @@ Customer report → assess impact/severity → reproduce → collect evidence �
 | INC006 | ext4 filesystem | Inode exhaustion while disk blocks remained available | df -h, df -i, findmnt, du --inodes |
 | INC007 | LVM / filesystem capacity | Application logical volume exhausted while volume group still had free capacity | df, du, lsblk, findmnt, pvs, vgs, lvs, resize2fs |
 | INC008 | HAProxy / Nginx / TLS | Certificate SAN did not match the HTTPS service hostname | curl, openssl s_client, haproxy -c, nginx -t, ss, systemctl |
+| INC009 | nftables / networking | Firewall rule blocked TCP/18089 while routing, ICMP, listener, and local application remained healthy | ip, ping, ss, curl, nft |
 
 ## INC001 — systemd Service Start Failure
 
@@ -146,6 +147,24 @@ During the incident:
 The failure was isolated to certificate hostname identity rather than application availability, reverse-proxy availability, TCP reachability, or TLS negotiation.
 
 The known-good certificate containing `DNS:inc008.local` was restored. HAProxy configuration was validated before reload, and strict HTTPS validation then succeeded without disabling certificate verification.
+
+## INC009 - nftables Network Connectivity Failure
+
+A remote client could not reach an application even though the server remained reachable and the application was healthy locally.
+
+During the incident:
+
+- client and server IP configuration: correct
+- client route: correct
+- ICMP reachability: successful
+- application listener: healthy on TCP 18089
+- local HTTP request: successful
+- remote HTTP request: timed out
+- nftables drop counter: 4 packets / 240 bytes
+
+The fault was isolated to an nftables rule explicitly dropping TCP traffic from the client to the application port.
+
+The specific blocking rule was removed without disabling the firewall or restarting the application. The original remote HTTP request then succeeded.
 
 ## Linux Diagnostic Support Bundle
 

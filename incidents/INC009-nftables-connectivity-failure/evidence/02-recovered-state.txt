@@ -1,0 +1,30 @@
+=== INC009 RECOVERED STATE ===
+Tue Oct  6 16:14:37 UTC 2026
+
+=== CLIENT ROUTE ===
+10.209.0.0/24 dev inc009-cli-veth proto kernel scope link src 10.209.0.2
+
+=== PING ===
+PING 10.209.0.1 (10.209.0.1) 56(84) bytes of data.
+64 bytes from 10.209.0.1: icmp_seq=1 ttl=64 time=0.044 ms
+64 bytes from 10.209.0.1: icmp_seq=2 ttl=64 time=0.282 ms
+
+--- 10.209.0.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1011ms
+rtt min/avg/max/mdev = 0.044/0.163/0.282/0.119 ms
+
+=== SERVER LISTENER ===
+LISTEN 0      5         10.209.0.1:18089      0.0.0.0:*    users:(("python3",pid=3957,fd=3))
+
+=== SERVER LOCAL HTTP ===
+{"status":"ok","service":"inc009-network-app"}
+
+=== CLIENT HTTP ===
+{"status":"ok","service":"inc009-network-app"}
+
+=== NFTABLES ===
+table inet inc009 { # handle 1
+	chain input { # handle 1
+		type filter hook input priority filter; policy accept;
+	}
+}
