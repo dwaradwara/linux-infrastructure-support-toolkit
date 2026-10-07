@@ -225,6 +225,20 @@ This validates repeatable, idempotent configuration management with Ansible.
 Implementation and execution evidence are available under `ansible/`.
 
 
+
+## Proxmox VE and Storage Recovery Lab
+
+Additional infrastructure exercises cover hands-on Proxmox VE administration and storage recovery:
+
+- nested Proxmox VE 9.2.2 deployment
+- Cloud-Init Ubuntu VM provisioning
+- QEMU guest-agent integration
+- VM snapshot, `vzdump` backup, destruction, and `qmrestore` recovery
+- ZFS mirror degradation, disk replacement, resilver, and scrub
+- `mdadm` RAID1 degradation, member replacement, and rebuild
+
+See `docs/proxmox-storage-recovery-lab.md` for the complete lab summary.
+
 ## Linux Diagnostic Support Bundle
 
 The repository includes `scripts/support-bundle.sh`, an allowlisted Linux diagnostic collector.

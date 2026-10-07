@@ -1,0 +1,95 @@
+=== PROXMOX LAB FINAL VALIDATION ===
+Wed Oct  7 06:34:57 AM UTC 2026
+
+=== PROXMOX VERSION ===
+pve-manager/9.2.2/b9984c6d90a4bd80 (running kernel: 7.0.2-6-pve)
+
+=== NODE ===
+proxmox-lab-01.lab.local
+
+=== NESTED KVM ===
+8
+crw-rw---- 1 root kvm 10, 232 Oct  7 09:48 /dev/kvm
+
+=== PROXMOX STORAGE ===
+Name             Type     Status     Total (KiB)      Used (KiB) Available (KiB)        %
+local             dir     active        18232596         7035804        10245292   38.59%
+local-lvm     lvmthin     active        11493376         3025056         8468319   26.32%
+
+=== VM 100 ===
+agent: enabled=1
+boot: order=scsi0
+ciuser: ubuntu
+cores: 1
+cpu: host
+ide2: local-lvm:vm-100-cloudinit,media=cdrom
+ipconfig0: ip=dhcp
+memory: 1024
+meta: creation-qemu=11.0.0,ctime=1791350304
+name: ubuntu-pve-01
+net0: virtio=BC:24:11:AE:06:49,bridge=vmbr0
+ostype: l26
+scsi0: local-lvm:vm-100-disk-0,size=8G
+scsihw: virtio-scsi-single
+serial0: socket
+smbios1: uuid=801ea663-7b4d-4a61-8871-7712882006e5
+sshkeys: ssh-ed25519%20AAAAC3NzaC1lZDI1NTE5AAAAIMIs%2FwRBBIuHxOo1j47qK0m95k0QU%2Bx0rJBolHM70jQR%20userdwara6190%40Dwara%0A
+vga: serial0
+vmgenid: fa3ef5cf-98c8-43a3-80d6-26a255c834a6
+status: stopped
+
+=== ZFS ===
+  pool: tank
+ state: ONLINE
+  scan: scrub repaired 0B in 00:00:00 with 0 errors on Wed Oct  7 09:56:39 2026
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	tank        ONLINE       0     0     0
+	  mirror-0  ONLINE       0     0     0
+	    vdb     ONLINE       0     0     0
+	    vdd     ONLINE       0     0     0
+
+errors: No known data errors
+
+=== RAID1 ===
+Personalities : [raid1] 
+md0 : active raid1 vdf[2] vdc[0]
+      3142656 blocks super 1.2 [2/2] [UU]
+      bitmap: 0/1 pages [0KB], 65536KB chunk
+
+unused devices: <none>
+/dev/md0:
+           Version : 1.2
+     Creation Time : Wed Oct  7 10:06:28 2026
+        Raid Level : raid1
+        Array Size : 3142656 (3.00 GiB 3.22 GB)
+     Used Dev Size : 3142656 (3.00 GiB 3.22 GB)
+      Raid Devices : 2
+     Total Devices : 2
+       Persistence : Superblock is persistent
+
+     Intent Bitmap : Internal
+
+       Update Time : Wed Oct  7 10:32:38 2026
+             State : clean 
+    Active Devices : 2
+   Working Devices : 2
+    Failed Devices : 0
+     Spare Devices : 0
+
+Consistency Policy : bitmap
+
+              Name : proxmox-lab-01:0  (local to host proxmox-lab-01)
+              UUID : df364fbf:4fd6c1f7:7438e2aa:e9c67d90
+            Events : 56
+
+    Number   Major   Minor   RaidDevice State
+       0     253       32        0      active sync   /dev/vdc
+       2     253       80        1      active sync   /dev/vdf
+
+=== RAID DATA ===
+/mnt/raid1-lab/raid-recovery-test.bin: OK
+
+=== ZFS DATA ===
+/tank/lab-data/recovery-test.bin: OK
